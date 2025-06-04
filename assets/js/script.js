@@ -16,40 +16,41 @@ function random() {
     return Math.floor(Math.random() * randomizados)
 }
 
-let geradorSenha = {
-    alfabeto: ['a', 'b', 'c', 'd', 'e', 'f', 'g',
+document.addEventListener('click', (e) => {
+    const target = e.target
+    console.log(target)
+    if(upper.checked) {
+        console.log('oii')
+    } else {
+        console.log('nao')
+    }
+})
+
+let gerador = [
+    'a', 'b', 'c', 'd', 'e', 'f', 'g',
     'h', 'i', 'j', 'k', 'l', 'm', 'n',
     'o', 'p', 'q', 'r', 's', 't', 'u',
-    'v', 'w', 'x', 'y', 'z']
-}
-
-console.log(geradorSenha)
-
-//document.addEventListener('click', (e) => {
-//    if(upper.checked) {
-//        maiusculo()
-//    } else {
-//        
- //   }
-//
-  //  console.log()
-//})
+    'v', 'w', 'x', 'y', 'z'
+];
 
 const maiusculo = () => {
-     geradorSenha.alfabetoMaiusculo = [
+    const alfabetoMaiusculo = [
         'A', 'B', 'C', 'D', 'E', 'F', 'G',
         'H', 'I', 'J', 'K', 'L', 'M', 'N',
         'O', 'P', 'Q', 'R', 'S', 'T', 'U',
         'V', 'W', 'X', 'Y', 'Z'
     ];
+
+    for (let i = 0; i < alfabetoMaiusculo.length; i++) {
+        gerador.push(alfabetoMaiusculo[i])
+    }
     randomizados += 27;
-    console.log(geradorSenha)
 }
 
 const numeros = () => {
     const numeros = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     for (let i = 0; i < numeros.length; i++) {
-        geradorSenha.push(numeros[i])
+        gerador.push(numeros[i])
     }
     randomizados += 11;
 }
@@ -60,7 +61,7 @@ const simbolos = () => {
         '-', '_', '+', '=', '.', '?'
     ];
     for (let i = 0; i < simbolos.length; i++) {
-        geradorSenha.push(simbolos[i]);
+        gerador.push(simbolos[i]);
     };
     randomizados += 14;
 }
@@ -72,6 +73,9 @@ frm.addEventListener('submit', (e) => {
 
     if(upper.checked) {
         maiusculo();
+    } else {
+        gerador = gerador.filter(semMaiuscula => !/^[A-Z]$/.test(semMaiuscula))
+        
     }
 
     if(number.checked) {
@@ -84,8 +88,10 @@ frm.addEventListener('submit', (e) => {
 
     senhaBruta = []
     for(let i = 0; i < range.value ; i++) {
-        senhaBruta.push(geradorSenha.alfabeto[random()])
+        senhaBruta.push([...gerador][random()])
     }
+
+    console.log(gerador)
     display.innerText = (senhaBruta.join(''))
 })
 
