@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=content_copy" />
+</head>
+<body>
+    <p class="title">Gerador de senha</p>
+    <div class="container">
+        <div class="container-display">
+            <p class="container-display-p">ASADqweqsa##2421</p>
+            <span class="material-symbols-outlined inCopy">
+            content_copy
+            </span>
+        </div>
+        <div class="container-form">
+            <form>
+                <div class="container-range">
+                    <div class="container-range-p">
+                        <p>Quantidade de caracteres:</p>
+                        <span class="quant">17</span>
+                    </div>
+                    <input type="range" min="8" max="26" id="inRange">
+                </div>
+                
+                <div class="container-inputs">
+                    <input type="checkbox" id="inUpper"> <label for="inUpper">Adicionar letras maiúsculas</label> <br>
+                    <input type="checkbox" id="inNumber"> <label for="inNumber">Adicionar números</label> <br>
+                    <input type="checkbox" id="inSymbol"> <label for="inSymbol">Adicionar simbolos</label>
+                </div>
+                
+                <div class="submit">
+                    <input type="submit" id="inEnviar" value="Gerar">
+                </div>
+                
+            </form>
+        </div>
+    
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

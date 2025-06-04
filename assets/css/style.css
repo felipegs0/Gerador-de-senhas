@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'montserrat', arial, sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, #030203, #1c153a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body .title {
+    color: rgba(219, 219, 219, 0.644);
+    font-size: 1.5em;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 620px;
+    height: 750px;
+    border-radius: 9px;
+    margin: 20px;
+}
+
+.container-display {
+    width: 100%;
+    height: 70px;
+    align-content: center;
+    background-color: #24232B;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px 0px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.material-symbols-outlined {
+    
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: all, 0.2s;
+}
+
+.material-symbols-outlined:active {
+    color: rgba(255, 255, 255, 0.534);
+}
+
+.container-display p {
+    font-size: 2em;
+}
+
+.container-form {
+    width: 620px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    
+    font-size: 1.3em;
+}
+
+.container-range {
+    background-color: #24232B;
+    height: 125px;
+    padding: 20px;
+    display: flex;
+    border-radius: 0px 12px 0 0;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container-range-p {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.container-range-p p{
+    padding-left: 22px;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.849);
+    margin: 0px 22px 20px 0px;
+}
+
+.quant {
+    font-size: 26px;
+    color: rgb(136, 117, 241);
+    font-weight: 400;
+    padding-right: 22px;
+}
+
+.container-range input {
+    width: 90%;
+    cursor: pointer;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+.container-inputs {
+    background-color: #24232B;
+    height: 125px;
+    padding: 0px 20px;
+}
+
+.container-inputs input {
+    transform: scale(1.5);
+    margin-right: 12px;
+    margin-bottom: 20px;
+    margin-left: 32px;
+}
+
+.submit {
+    background-color: #24232B;
+    height: 105px;
+    padding: 12px;
+    border-radius: 0px 0px 0px 12px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.submit input {
+    width: 550px;
+    height: 75%;
+    background-color: #453e5f;
+    border: none;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all, 0.3s;
+}
+
+.submit input:hover {
+    background-color: #36304b;
+}
