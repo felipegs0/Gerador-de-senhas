@@ -141,3 +141,25 @@ body .title {
 .submit input:hover {
     background-color: #36304b;
 }
+
+.passwords {
+    border: 1px solid rgb(255, 255, 255);
+    background-color: #a288ff;
+    padding: 17px;
+    position: relative;
+    top: 85%;
+    left: 45%;
+    border-radius: 50%;
+    cursor: pointer;
+    
+    transition: all, 0.2s;
+}
+
+.passwords:hover {
+    background-color: #c4b2ff;
+    box-shadow: 0px 0px 7px 1px rgba(255, 255, 255, 0.5);
+}
+
+.passwords img {
+    width: 55px;
+}
