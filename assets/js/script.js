@@ -7,6 +7,7 @@ const symbol = document.getElementById('inSymbol')
 const quant = document.querySelector('.quant')
 const display = document.querySelector('.container-display-p')
 const copy = document.querySelector('.inCopy')
+const passwords = document.querySelector('.btPasswords')
 
 const submit = document.getElementById('inEnviar') // remover caso não seja usado
 
@@ -101,3 +102,8 @@ copy.addEventListener('click', () => {
 
     console.log('Senha copiada com sucesso')
 })
+
+passwords.addEventListener('click', () => {
+
+})
+
