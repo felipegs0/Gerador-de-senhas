@@ -7,7 +7,7 @@ const symbol = document.getElementById('inSymbol')
 const quant = document.querySelector('.quant')
 const display = document.querySelector('.container-display-p')
 const copy = document.querySelector('.inCopy')
-const passwords = document.querySelector('.btPasswords')
+
 
 const submit = document.getElementById('inEnviar') // remover caso não seja usado
 
@@ -82,7 +82,7 @@ document.addEventListener('click', (e) => {
 
 let senhaBruta = []
 
-frm.addEventListener('submit', (e) => {
+submit.addEventListener('click', (e) => {
     e.preventDefault()
     senhaBruta = []
     for(let i = 0; i < range.value ; i++) {
@@ -103,7 +103,15 @@ copy.addEventListener('click', () => {
     console.log('Senha copiada com sucesso')
 })
 
-passwords.addEventListener('click', () => {
+const passwords = document.querySelector('.btPasswords')
+const savePasswords = document.querySelector('.savePasswords')
 
-})
+const showPasswords = () => {
+    const display = getComputedStyle(savePasswords).display;
 
+    if (display === "none") {
+    savePasswords.style.display = "flex";
+  } else {
+    savePasswords.style.display = "none";
+  }
+}
