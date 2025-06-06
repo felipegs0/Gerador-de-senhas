@@ -6,10 +6,8 @@ const number = document.getElementById('inNumber')
 const symbol = document.getElementById('inSymbol')
 const quant = document.querySelector('.quant')
 const display = document.querySelector('.container-display-p')
-const copy = document.querySelector('.inCopy')
 
 
-const submit = document.getElementById('inEnviar') // remover caso não seja usado
 
 function random() {
     return Math.floor(Math.random() * gerador.length)
@@ -52,6 +50,9 @@ const symbolF = () => {
     };
 }
 
+let senhaBruta = []
+const submit = document.getElementById('inEnviar')
+
 document.addEventListener('click', (e) => {
     const target = e.target
     
@@ -78,18 +79,16 @@ document.addEventListener('click', (e) => {
         gerador = gerador.filter(noSym => !/[!@#$%&*-_+=.?]/.test(noSym))
     }
     }
-})
 
-let senhaBruta = []
-
-submit.addEventListener('click', (e) => {
-    e.preventDefault()
+    if(target == submit) {
+        e.preventDefault()
     senhaBruta = []
     for(let i = 0; i < range.value ; i++) {
         senhaBruta.push([...gerador][random()])
     }
 
     display.innerText = (senhaBruta.join(''))
+    }
 })
 
 range.addEventListener('change', () => {
@@ -97,24 +96,58 @@ range.addEventListener('change', () => {
     quant.innerText += ` ${range.value}`;
 })
 
+const copy = document.querySelector('.inCopy')
 const popUp = document.querySelector('.popUp')
 
 
 copy.addEventListener('click', () => {
+    if(display.innerText == "") {
+        alert('Não há nenhuma senha para ser copiada.')
+        return
+    }
     navigator.clipboard.writeText(display.innerText)
 
-    const display = getComputedStyle(popUp).display;
+    const displayPop = getComputedStyle(popUp).display;
+    if (displayPop === "none") {
+    popUp.style.display = "flex";
+  } 
 })
 
 const passwords = document.querySelector('.btPasswords')
 const savePasswords = document.querySelector('.savePasswords')
 
-const showPasswords = () => {
-    const display = getComputedStyle(savePasswords).display;
+const closePasswordsSave = () => {
+    const displayPop = getComputedStyle(popUp).display;
 
-    if (display === "none") {
+    if (displayPop === "none") {
+        popUp.style.display = "flex";
+    } else {
+        popUp.style.display = "none";
+    }
+}
+
+const showPasswords = () => {
+    const displaySave = getComputedStyle(savePasswords).display;
+
+    if (displaySave === "none") {
     savePasswords.style.display = "flex";
   } else {
     savePasswords.style.display = "none";
   }
+}
+
+const savePassword = () => {
+    const displayPop = getComputedStyle(popUp).display;
+
+    if (displayPop === "flex") {
+        popUp.style.display = "none";
+    }
+
+    const div = document.createElement('div')
+    const p = document.createElement('p')
+    savePasswords.appendChild(div)
+    div.appendChild(p)
+
+    div.classList.add('model')
+    p.innerText = `Senha: ` + display.innerText;
 }
