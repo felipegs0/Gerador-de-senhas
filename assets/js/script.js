@@ -97,10 +97,13 @@ range.addEventListener('change', () => {
     quant.innerText += ` ${range.value}`;
 })
 
+const popUp = document.querySelector('.popUp')
+
+
 copy.addEventListener('click', () => {
     navigator.clipboard.writeText(display.innerText)
 
-    console.log('Senha copiada com sucesso')
+    const display = getComputedStyle(popUp).display;
 })
 
 const passwords = document.querySelector('.btPasswords')

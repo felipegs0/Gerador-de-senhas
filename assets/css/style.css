@@ -169,7 +169,7 @@ body .title {
 
 .savePasswords {
     position: absolute;
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 20px;
     width: 700px;
@@ -182,4 +182,48 @@ body .title {
     background-color: #453e5f;
     padding: 15px;
     border-radius: 0px 12px 0px 12px;
+}
+
+.popUp {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: #767192;
+    padding: 20px;
+    gap: 15px;
+    border-radius: 4px;
+}
+
+.btPop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.btYes {
+    background-color: rgb(80, 194, 80);
+    width: 100px;
+    height: 20px;
+    border: none;
+    border-radius: 3px;
+    font-size: 1em;
+
+    cursor: pointer;
+}
+
+.btNo {
+    background-color: rgba(194, 80, 80, 0.89);
+    width: 100px;
+    height: 20px;
+    border: none;
+    border-radius: 3px;
+    font-size: 1em;
+
+    cursor: pointer;
 }
