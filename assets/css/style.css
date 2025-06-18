@@ -227,3 +227,71 @@ body .title {
 
     cursor: pointer;
 }
+
+.addPasswords {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: #444253;
+    padding: 30px;
+    
+    border-radius: 12px;
+    width: 600px;
+    height: 600px;
+    box-shadow: 0px 0px 9px 4px rgba(0, 0, 0, 0.326);
+}
+
+.addPasswords label {
+    font-size: 35px;
+    
+}
+
+.addPasswords input {
+    margin-top: 12px;
+    height: 45px;
+    width: 100%;
+    border: none;
+    color: black;
+    font-size: 22px;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.btPass {
+    height: 100%;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btPassYes, .btPassNo {
+    width: 100%;
+    height: 60px;
+    border: none;
+    border-radius: 9px;
+    font-size: 1.5em;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: all, 0.3s;
+}
+
+.btPassYes:hover , .btPassNo:hover {
+    opacity: 0.7;
+}
+
+.btPassYes {
+    background-color: #272536f1;
+
+}
+
+.btPassNo {
+    background-color: #e9e9e9f1;
+    color: rgb(0, 0, 0);
+}

@@ -136,11 +136,18 @@ const showPasswords = () => {
   }
 }
 
+const addPasswords = document.querySelector('.addPasswords')
+
 const savePassword = () => {
     const displayPop = getComputedStyle(popUp).display;
+    const displayAdd = getComputedStyle(addPasswords).display;
 
     if (displayPop === "flex") {
         popUp.style.display = "none";
+    }
+
+    if (displayAdd == 'none') {
+        addPasswords.style.display = "flex";
     }
 
     const div = document.createElement('div')
@@ -150,4 +157,8 @@ const savePassword = () => {
 
     div.classList.add('model')
     p.innerText = `Senha: ` + display.innerText;
+
+    const passwordTest = document.querySelector('#passwordTest')
+    passwordTest.value += display.innerText
 }
+
