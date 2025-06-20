@@ -138,7 +138,7 @@ const showPasswords = () => {
 
 const addPasswords = document.querySelector('.addPasswords')
 
-const savePassword = () => {
+const divSavePassword = () => {
     const displayPop = getComputedStyle(popUp).display;
     const displayAdd = getComputedStyle(addPasswords).display;
 
@@ -159,6 +159,15 @@ const savePassword = () => {
     p.innerText = `Senha: ` + display.innerText;
 
     const passwordTest = document.querySelector('#passwordTest')
-    passwordTest.value += display.innerText
+    passwordTest.value = display.innerText
 }
 
+const closePasswordsAdd = () => {
+    const displayAdd = getComputedStyle(addPasswords).display;
+
+    if (displayAdd === "none") {
+        addPasswords.style.display = "flex";
+    } else {
+        addPasswords.style.display = "none";
+    }
+}
