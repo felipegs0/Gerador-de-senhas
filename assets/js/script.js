@@ -1,9 +1,6 @@
 const frm = document.querySelector('form')
 const range = document.getElementById('inRange')
-const upper = document.getElementById('inUpper')
 const lower = document.getElementById('inLower')
-const number = document.getElementById('inNumber')
-const symbol = document.getElementById('inSymbol')
 const quant = document.querySelector('.quant')
 const display = document.querySelector('.container-display-p')
 
@@ -20,6 +17,7 @@ let gerador = [
     'v', 'w', 'x', 'y', 'z'
 ];
 
+const upper = document.getElementById('inUpper')
 const upperF = () => {
     const alfabetoMaiusculo = [
         'A', 'B', 'C', 'D', 'E', 'F', 'G',
@@ -33,6 +31,7 @@ const upperF = () => {
     }
 }
 
+const number = document.getElementById('inNumber')
 const numberF = () => {
     const numeros = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     for (let i = 0; i < numeros.length; i++) {
@@ -40,6 +39,7 @@ const numberF = () => {
     }
 }
 
+const symbol = document.getElementById('inSymbol')
 const symbolF = () => {
     const simbolos = [
         '!', '@', '#', '$', '%', '&', '*',
@@ -128,6 +128,10 @@ const closePasswordsSave = () => {
 
 const showPasswords = () => {
     const displaySave = getComputedStyle(savePasswords).display;
+    if (informacoes == "") {
+        alert('Não há nenhuma senha salva. \nGere uma senha e clique em copiar para salva-la.')
+        return
+    }
 
     if (displaySave === "none") {
     savePasswords.style.display = "flex";
@@ -138,7 +142,7 @@ const showPasswords = () => {
 
 const addPasswords = document.querySelector('.addPasswords')
 
-const divSavePassword = () => {
+const savePassword = () => {
     const displayPop = getComputedStyle(popUp).display;
     const displayAdd = getComputedStyle(addPasswords).display;
 
@@ -150,16 +154,41 @@ const divSavePassword = () => {
         addPasswords.style.display = "flex";
     }
 
-    const div = document.createElement('div')
-    const p = document.createElement('p')
-    savePasswords.appendChild(div)
-    div.appendChild(p)
-
-    div.classList.add('model')
-    p.innerText = `Senha: ` + display.innerText;
-
     const passwordTest = document.querySelector('#passwordTest')
     passwordTest.value = display.innerText
+}
+
+let informacoes = []
+
+const saveSavePasswords = () => {
+    const service = document.querySelector('#inService')
+    const user = document.querySelector('#inUser')
+    const passwordTest = document.querySelector('#passwordTest')
+
+    informacoes.push({
+        servico: service.value,
+        usuario: user.value,
+        senha: passwordTest.value,
+    })
+
+    const div = document.createElement('div')
+    const pService = document.createElement('p')
+    const pUser = document.createElement('p')
+    const pPassword = document.createElement('p')
+    savePasswords.appendChild(div)
+
+    div.appendChild(pService)
+    div.appendChild(pUser)
+    div.appendChild(pPassword)
+
+    div.classList.add('model')
+
+    pService.innerText = `Serviço: ${service.value}`
+    pUser.innerText = `Usuário: ${user.value}`
+    pPassword.innerText = `Senha: ` + display.innerText;
+
+
+    console.log(informacoes)
 }
 
 const closePasswordsAdd = () => {

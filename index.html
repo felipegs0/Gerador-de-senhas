@@ -62,13 +62,13 @@
     </div>
     <div class="addPasswords">
         <label for="">Serviço:</label>
-        <input type="text" maxlength="37"> <br>
+        <input type="text" maxlength="37" id="inService" required> <br>
         <label for="">Usuário:</label> 
-        <input type="text" maxlength="37"> <br>
+        <input type="text" maxlength="37" id="inUser" required> <br>
         <label for="">Senha:</label> 
         <input type="text" id="passwordTest" readonly>
         <div class="btPass">
-            <button class="btPassYes">Salvar</button>
+            <button class="btPassYes" onclick="saveSavePasswords()">Salvar</button>
             <button class="btPassNo" onclick="closePasswordsAdd()">Cancelar</button>
         </div>
     </div>
