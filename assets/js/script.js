@@ -159,26 +159,29 @@ const savePassword = () => {
 }
 
 let informacoes = []
+console.log(informacoes)
 
 function informacoesSalvas() {
     const informacoesRecuperadas = JSON.parse(localStorage.getItem('senhaTeste'))
-
-    const div = document.createElement('div')
-    const pService = document.createElement('p')
-    const pUser = document.createElement('p')
-    const pPassword = document.createElement('p')
-    savePasswords.appendChild(div)
-
-    div.appendChild(pService)
-    div.appendChild(pUser)
-    div.appendChild(pPassword)
-
-    div.classList.add('model')
-
+    console.log(informacoesRecuperadas)
+    informacoes.push(informacoesRecuperadas)
+    
+    
     informacoesRecuperadas.forEach(usuarios => {
-        pService.innerText = `Serviço: `, usuarios.servico;
-        pUser.innerText = `Usuário: `, usuarios.usuario;
-        pPassword.innerText = `Senha: `, usuarios.senha;
+        const div = document.createElement('div')
+        savePasswords.appendChild(div)
+        const pService = document.createElement('p')
+        const pUser = document.createElement('p')
+        const pPassword = document.createElement('p')
+        div.appendChild(pService)
+        div.appendChild(pUser)
+        div.appendChild(pPassword)
+        
+        div.classList.add('model')
+
+        pService.innerText = `Serviço: ` + usuarios.servico;
+        pUser.innerText = `Usuário: ` + usuarios.usuario;
+        pPassword.innerText = `Senha: ` + usuarios.senha;
     })
 }
 
