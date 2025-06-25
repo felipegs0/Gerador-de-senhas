@@ -159,15 +159,12 @@ const savePassword = () => {
 }
 
 let informacoes = []
-console.log(informacoes)
 
 function informacoesSalvas() {
-    const informacoesRecuperadas = JSON.parse(localStorage.getItem('senhaTeste'))
-    console.log(informacoesRecuperadas)
-    informacoes.push(informacoesRecuperadas)
-    
-    
-    informacoesRecuperadas.forEach(usuarios => {
+    let dados = JSON.parse(localStorage.getItem('senhaGeradorTeste'))
+    informacoes = dados;
+
+        informacoes.forEach(usuarios => {
         const div = document.createElement('div')
         savePasswords.appendChild(div)
         const pService = document.createElement('p')
@@ -215,7 +212,7 @@ const saveSavePasswords = () => {
     pPassword.innerText = `Senha: ` + display.innerText;
 
 
-    localStorage.setItem('senhaTeste', JSON.stringify(informacoes))
+    localStorage.setItem('senhaGeradorTeste', JSON.stringify(informacoes))
 }
 
 const closePasswordsAdd = () => {
