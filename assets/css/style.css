@@ -173,6 +173,8 @@ body .title {
     flex-direction: column;
     gap: 20px;
     width: 700px;
+    height: 700px;
+    overflow-y: scroll;
     background-color: #767192;
     padding: 20px;
     border-radius: 15px;
