@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gerador de senhas</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+<link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <p class="title">Gerador de senhas</p>
@@ -36,7 +37,7 @@
                 </div>
                 
                 <div class="submit">
-                    <input type="submit" id="inEnviar" value="Gerar">
+                    <input type="submit" id="inSubmit" value="Gerar">
                 </div>
                 
                 
@@ -69,7 +70,7 @@
         <label for="">Senha:</label> 
         <input type="text" id="passwordTest" readonly>
         <div class="btPass">
-            <button class="btPassYes" onclick="saveSavePasswords(); closePasswordsAdd()">Salvar</button>
+            <button class="btPassYes" onclick="savePasswordsAdd(); closePasswordsAdd()">Salvar</button>
             <button class="btPassNo" onclick="closePasswordsAdd()">Cancelar</button>
         </div>
     </div>

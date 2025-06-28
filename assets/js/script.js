@@ -51,7 +51,7 @@ const symbolF = () => {
 }
 
 let senhaBruta = []
-const submit = document.getElementById('inEnviar')
+const submit = document.getElementById('inSubmit')
 
 document.addEventListener('click', (e) => {
     const target = e.target
@@ -128,7 +128,7 @@ const closePasswordsSave = () => {
 
 const showPasswords = () => {
     const displaySave = getComputedStyle(savePasswords).display;
-    if (informacoes == "") {
+    if (infoPasswords == "") {
         alert('Não há nenhuma senha salva. \nGere uma senha e clique em copiar para salva-la.')
         return
     }
@@ -158,13 +158,13 @@ const savePassword = () => {
     passwordTest.value = display.innerText
 }
 
-let informacoes = []
+let infoPasswords = []
 
-function informacoesSalvas() {
-    let dados = JSON.parse(localStorage.getItem('senhaGeradorTeste'))
-    informacoes = dados;
+function infoSave() {
+    let dados = JSON.parse(localStorage.getItem('passwordSave'))
+    infoPasswords = dados || [];
 
-        informacoes.forEach(usuarios => {
+        infoPasswords.forEach(usuarios => {
         const div = document.createElement('div')
         savePasswords.appendChild(div)
         const pService = document.createElement('p')
@@ -182,14 +182,14 @@ function informacoesSalvas() {
     })
 }
 
-informacoesSalvas()
+infoSave()
 
-const saveSavePasswords = () => {
+function savePasswordsAdd() {
     const service = document.querySelector('#inService')
     const user = document.querySelector('#inUser')
     const passwordTest = document.querySelector('#passwordTest')
 
-    informacoes.push({
+    infoPasswords.push({
         servico: service.value,
         usuario: user.value,
         senha: passwordTest.value,
@@ -212,7 +212,7 @@ const saveSavePasswords = () => {
     pPassword.innerText = `Senha: ` + display.innerText;
 
 
-    localStorage.setItem('senhaGeradorTeste', JSON.stringify(informacoes))
+    localStorage.setItem('passwordSave', JSON.stringify(infoPasswords))
 }
 
 const closePasswordsAdd = () => {
