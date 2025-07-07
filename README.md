@@ -55,4 +55,4 @@ Gerador-de-senhas/
 ## ✏️ Autor:
 
 - Felipe G. Santos
-- Github: <a href="https://github.com/felipegs0/Gerador-de-senhas" >@felipegs0</a>
+- Github: <a href="https://github.com/felipegs0/">@felipegs0</a>
